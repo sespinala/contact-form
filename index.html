@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <form action="">
+      <div class="container">
+        <div>
+          <h1>Contact Us</h1>
+        </div>
+        <div>
+          <div class="name-container">
+            <div>
+              <label
+                class="label"
+                for="first-name"
+                >First Name</label
+              >
+              <input
+                id="first-name"
+                class="name-container__input"
+                type="text"
+                required
+              />
+            </div>
+            This field is required
+
+            <div>
+              <label
+                class="label"
+                for="last-name"
+                >Last Name</label
+              >
+              <input
+                id="last-name"
+                class="name-container__input"
+                type="text"
+                required
+              />
+            </div>
+            This field is required
+          </div>
+
+          <div class="email-container">
+            <label
+              class="label"
+              for="email"
+              >Email Address</label
+            >
+            <input
+              id="email"
+              class="email-container__input"
+              type="text"
+              required
+            />
+          </div>
+          Please enter a valid email address This field is required
+
+          <div class="query-type-container">
+            <div>
+              <label
+                class="label"
+                for="query-type"
+                >Query Type</label
+              >
+            </div>
+            <div id="query-type">
+              <div>
+                <input
+                  class="query-type-container__item"
+                  type="text"
+                />
+                General Enquiry
+              </div>
+              <div>
+                <input
+                  class="query-type-container__item"
+                  type="text"
+                />
+                Support Request
+              </div>
+            </div>
+          </div>
+          Please select a query type
+
+          <div class="message-container">
+            <label
+              class="label"
+              for="message"
+              >Message</label
+            >
+            <input
+              id="message"
+              class="message-container__input"
+              type="text"
+              required
+            />
+          </div>
+          This field is required
+
+          <div class="consent-container">
+            <input
+              id="consent"
+              class="consent-container__input"
+              type="text"
+              required
+            />
+            I consent to being contacted by the team
+          </div>
+          To submit this form, please consent to being contacted
+
+          <div class="button-container">
+            <button
+              id="submit"
+              class="button-container__button"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+
+          Message Sent! Thanks for completing the form. We'll be in touch soon!
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
