@@ -23,6 +23,11 @@ h1 {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .name-container > div,
@@ -34,7 +39,8 @@ h1 {
   flex-direction: column;
 }
 
-.name-container {
+.name-container,
+.query-type-container__item-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -93,7 +99,7 @@ label {
   margin-bottom: 10px;
 }
 
-.query-label-container {
+legend {
   margin-bottom: 20px;
 }
 
@@ -102,4 +108,43 @@ label {
 .query-type-container,
 .message-container {
   margin-bottom: 20px;
+}
+
+.query-type-fieldset {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.query-type-label {
+  margin-bottom: 0px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.query-type-container__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: 8px;
+  border-color: hsl(186, 15%, 59%);
+  border-width: 1.2px;
+  border-style: solid;
+}
+
+.query-type-container__item-wrapper {
+  cursor: pointer;
+}
+
+.query-type-container__item-wrapper > div:first-child {
+  width: 49%;
+}
+
+.query-type-container__item-wrapper > div:last-child {
+  width: 48%;
+}
+
+input[type="radio"] {
+ 
 }

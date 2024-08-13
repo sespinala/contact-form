@@ -76,30 +76,38 @@
           </div>
 
           <div class="query-type-container">
-            <div class="query-label-container">
-              <label
-                class="label"
-                for="query-type"
-                >Query Type</label
-              >
-            </div>
-            <div id="query-type">
-              <div>
-                <input
-                  class="query-type-container__item"
-                  type="text"
-                />
-                General Enquiry
+            <fieldset class="query-type-fieldset">
+              <legend>Query Type</legend>
+              <div class="query-type-container__item-wrapper">
+                <div class="query-type-container__item">
+                  <input
+                    type="radio"
+                    id="general-enquiry"
+                    value="general-enquiry"
+                    name="query-type"
+                  />
+                  <label
+                    class="query-type-label"
+                    for="general-enquiry"
+                    >General Enquiry</label
+                  >
+                </div>
+                <div class="query-type-container__item">
+                  <input
+                    type="radio"
+                    id="support-request"
+                    value="support-request"
+                    name="query-type"
+                  />
+                  <label
+                    class="query-type-label"
+                    for="support-request"
+                    >Support Request</label
+                  >
+                </div>
               </div>
-              <div>
-                <input
-                  class="query-type-container__item"
-                  type="text"
-                />
-                Support Request
-              </div>
-            </div>
-            <span>Please select a query type</span>
+              <span>Please select a query type</span>
+            </fieldset>
           </div>
 
           <div class="message-container">
