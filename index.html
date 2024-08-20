@@ -34,7 +34,7 @@
               <label
                 class="label"
                 for="first-name"
-                >First Name</label
+                >First Name<span class="field-required">*</span></label
               >
               <input
                 id="first-name"
@@ -42,14 +42,14 @@
                 type="text"
                 required
               />
-              <span>This field is required</span>
+              <span class="error-text">This field is required</span>
             </div>
 
             <div>
               <label
                 class="label"
                 for="last-name"
-                >Last Name</label
+                >Last Name<span class="field-required">*</span></label
               >
               <input
                 id="last-name"
@@ -57,7 +57,7 @@
                 type="text"
                 required
               />
-              <span>This field is required</span>
+              <span class="error-text">This field is required</span>
             </div>
           </div>
 
@@ -65,7 +65,7 @@
             <label
               class="label"
               for="email"
-              >Email Address</label
+              >Email Address<span class="field-required">*</span></label
             >
             <input
               id="email"
@@ -73,14 +73,13 @@
               type="text"
               required
             />
-            <span
-              >Please enter a valid email address This field is required</span
-            >
+            <span class="error-text">Please enter a valid email address</span>
+            <span class="error-text">This field is required</span>
           </div>
 
           <div class="query-type-container">
             <fieldset class="query-type-fieldset">
-              <legend>Query Type</legend>
+              <legend>Query Type<span class="field-required">*</span></legend>
               <div class="query-type-container__item-wrapper">
                 <div class="query-type-container__item">
                   <input
@@ -109,7 +108,7 @@
                   >
                 </div>
               </div>
-              <span>Please select a query type</span>
+              <span class="error-text">Please select a query type</span>
             </fieldset>
           </div>
 
@@ -117,7 +116,7 @@
             <label
               class="label"
               for="message"
-              >Message</label
+              >Message<span class="field-required">*</span></label
             >
             <textarea
               id="message"
@@ -126,7 +125,7 @@
               form="form"
               required
             ></textarea>
-            <span>This field is required</span>
+            <span class="error-text">This field is required</span>
           </div>
 
           <div class="consent-container">
@@ -139,10 +138,15 @@
                 required
               />
               <label for="consent"
-                >I consent to being contacted by the team</label
+                >I consent to being contacted by the team<span
+                  class="field-required"
+                  >*</span
+                ></label
               >
             </div>
-            <span>To submit this form, please consent to being contacted</span>
+            <span class="error-text"
+              >To submit this form, please consent to being contacted</span
+            >
           </div>
 
           <div class="button-container">
