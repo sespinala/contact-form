@@ -32,8 +32,7 @@ h1 {
 
 .name-container > div,
 .email-container,
-.message-container,
-.consent-container {
+.message-container {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -145,6 +144,68 @@ legend {
   width: 48%;
 }
 
-input[type="radio"] {
- 
+input[type='radio'] {
+  accent-color: hsl(169, 82%, 27%);
+  margin: 0px 10px 0px 20px;
+  width: 19px;
+}
+
+.query-type-container__item:has(input:checked) {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+  border-width: 1.2px;
+}
+
+textarea {
+  border-radius: 8px;
+  border-color: hsl(186, 15%, 59%);
+  border-width: 1.2px;
+  border-style: solid;
+  font-family: 'Karla';
+  font-size: 16px;
+  padding: 10px 20px;
+  color: hsl(187, 24%, 22%);
+  cursor: pointer;
+  line-height: 22px;
+  resize: none;
+}
+
+textarea:hover,
+textarea:focus,
+textarea:focus-within {
+  border-color: hsl(169, 82%, 27%);
+}
+
+textarea:active,
+textarea:focus-visible {
+  border-color: hsl(169, 82%, 27%);
+  border-width: 1.2px;
+  background-color: hsl(148, 38%, 91%);
+  outline: none;
+}
+
+.consent-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.consent-container__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.consent-container__wrapper label {
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  accent-color: hsl(169, 82%, 27%);
+  margin: 0px 20px 0px 0px;
+  width: 19px;
+  cursor: pointer;
 }

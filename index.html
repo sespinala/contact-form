@@ -20,7 +20,10 @@
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
-    <form action="">
+    <form
+      id="form"
+      action=""
+    >
       <div class="container">
         <div>
           <h1>Contact Us</h1>
@@ -116,23 +119,29 @@
               for="message"
               >Message</label
             >
-            <input
+            <textarea
               id="message"
               class="message-container__input"
-              type="text"
+              rows="3"
+              form="form"
               required
-            />
+            ></textarea>
             <span>This field is required</span>
           </div>
 
           <div class="consent-container">
-            <input
-              id="consent"
-              class="consent-container__input"
-              type="text"
-              required
-            />
-            I consent to being contacted by the team
+            <div class="consent-container__wrapper">
+              <input
+                id="consent"
+                class="consent-container__input"
+                type="checkbox"
+                name="consent"
+                required
+              />
+              <label for="consent"
+                >I consent to being contacted by the team</label
+              >
+            </div>
             <span>To submit this form, please consent to being contacted</span>
           </div>
 
