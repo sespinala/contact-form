@@ -215,8 +215,7 @@ input[type='checkbox'] {
   margin-left: 10px;
 }
 
-input:required,
-textarea:required {
+.input-field-required {
   border-color: hsl(0, 66%, 54%);
 }
 
