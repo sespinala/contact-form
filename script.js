@@ -1,114 +1,72 @@
-function hideElement(elem) {
-  if (!elem) return;
-  elem.hidden = true;
-}
+const firstNameId = 'first-name';
+const lastNameId = 'last-name';
+const emailId = 'email';
+const queryTypeName = 'query-type';
+const messageId = 'message';
+const consentId = 'consent';
 
-function hideErrorMessages() {
-  const errorMessages = document.getElementsByClassName('error-text');
-  for (const errorMessage of errorMessages) {
-    this.hideElement(errorMessage);
-  }
-}
+const validErrorTextId = 'valid-error-text';
+const requiredErrorTextId = 'required-error-text';
 
-function showError(errorMessage, element) {
+const inputRequiredClass = 'input-field-required';
+
+const showError = (errorMessage, element) => {
   errorMessage.hidden = false;
-  element.setAttribute('class', 'input-field-required');
+  element.setAttribute('class', inputRequiredClass);
 }
 
-function hideError(errorMessage, element) {
+const hideError = (errorMessage, element) => {
   errorMessage.hidden = true;
-  element.removeAttribute('class', 'input-field-required');
+  element.removeAttribute('class', inputRequiredClass);
 }
 
-window.addEventListener('load', () => {
-  this.hideErrorMessages();
-});
+const handleEmailInput = (event) => {
+  const validErrorMessage = document.querySelector(`#${validErrorTextId}`);
+  const requiredErrorMessage = document.querySelector(`#${requiredErrorTextId}`);
 
-// Input text
-window.addEventListener('load', () => {
-  const inputElements = document.querySelectorAll('input[type="text"]');
+  const element = event.target;
 
-  for (let i = 0; i < inputElements.length; i++) {
-    const element = inputElements[i];
+  const isValid = element.validity.valid;
+  const isValueMissing = element.validity.valueMissing;
 
-    element.addEventListener('input', () => {
-      const errorMessage = document.querySelector(`#${element.id}+span`);
-
-      if (element.validity.valueMissing) {
-        this.showError(errorMessage, element);
-      } else {
-        this.hideError(errorMessage, element);
-      }
-    });
+  if (isValueMissing){
+    showError(requiredErrorMessage, element);
+  } else {
+    if (!isValid) {
+      showError(validErrorMessage, element);
+    } else {
+      hideError(validErrorMessage, element);
+    }
+    hideError(requiredErrorMessage, element);
   }
-});
+};
 
-// Email
-window.addEventListener('load', () => {
-  const element = document.querySelector('input[type="email"]');
+const handleInput = (id, event) => {
+  const errorMessage = document.querySelector(`#${id}+span`);
 
-  element.addEventListener('input', () => {
-    const errorMessage = document.querySelectorAll(`.email-container>span`);
+  const element = event.target;
 
-    if (!element.validity.valid) {
-      this.showError(errorMessage[0], element);
-    } else {
-      this.hideError(errorMessage[0], element);
-    }
+  const isValid = element.validity.valid;
+  const isValueMissing = element.validity.valueMissing;
 
-    if (element.validity.valueMissing) {
-      this.hideError(errorMessage[0], element);
-      this.showError(errorMessage[1], element);
-    } else {
-      this.hideError(errorMessage[1], element);
-    }
-  });
-});
-
-// Textarea
-window.addEventListener('load', () => {
-  const element = document.querySelector('textarea');
-
-  element.addEventListener('input', () => {
-    const errorMessage = document.querySelector(`#${element.id}+span`);
-
-    if (element.validity.valueMissing) {
-      this.showError(errorMessage, element);
-    } else {
-      this.hideError(errorMessage, element);
-    }
-  });
-});
-
-// Radiobutton
-window.addEventListener('load', () => {
-  const elements = document.querySelectorAll('input[type="radio"]');
-
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    
-    if (element.validity.valueMissing) {
-        console.log('dfsfd')
-    }
+  if (isValueMissing){
+    showError(errorMessage, element);
+  } else {
+    hideError(errorMessage, element);
   }
-  
-});
+  console.log('holi');
+};
 
-// Checkbox
-window.addEventListener('load', () => {
-  const element = document.querySelector('input[type="checkbox"]');
+document.addEventListener('DOMContentLoaded', () => {
+  const firstNameElem = document.querySelector(`#${firstNameId}`);
+  firstNameElem.addEventListener('input', (event) => handleInput(firstNameId, event));
 
-  // element.addEventListener('input', () => {
-  //   const errorMessage = document.querySelector(`.query-type-container__item-wrapper+span`);
+  const lastNameElem = document.querySelector(`#${lastNameId}`);
+  lastNameElem.addEventListener('input', (event) => handleInput(lastNameId, event));
 
-  //   if (element.validity.valueMissing) {
-  //     this.showError(errorMessage, element);
-  //   } else {
-  //     this.hideError(errorMessage, element);
-  //   }
-  // });
-});
+  const emailElem = document.querySelector(`#${emailId}`);
+  emailElem.addEventListener('input', (event) => handleEmailInput(event));
 
-window.addEventListener('submit', (event) => {
-    event.preventDefault();
+  const messageElem = document.querySelector(`#${messageId}`);
+  messageElem.addEventListener('input', (event) => handleInput(messageId, event));
 });
