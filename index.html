@@ -22,7 +22,7 @@
   <body>
     <script src="./script.js"></script>
     <form
-      id="form"
+      name="form"
       action=""
     >
       <div class="container">
@@ -74,8 +74,16 @@
               type="email"
               required
             />
-            <span id ="valid-error-text" class="error-text">Please enter a valid email address</span>
-            <span id ="required-error-text" class="error-text">This field is required</span>
+            <span
+              id="valid-error-text"
+              class="error-text"
+              >Please enter a valid email address</span
+            >
+            <span
+              id="required-error-text"
+              class="error-text"
+              >This field is required</span
+            >
           </div>
 
           <div class="query-type-container">
@@ -87,7 +95,7 @@
                     type="radio"
                     id="general-enquiry"
                     value="general-enquiry"
-                    name="query-type"
+                    name="querytype"
                   />
                   <label
                     class="query-type-label"
@@ -100,7 +108,7 @@
                     type="radio"
                     id="support-request"
                     value="support-request"
-                    name="query-type"
+                    name="querytype"
                   />
                   <label
                     class="query-type-label"
@@ -109,7 +117,11 @@
                   >
                 </div>
               </div>
-              <span class="error-text">Please select a query type</span>
+              <span
+                id="query-type-error-text"
+                class="error-text"
+                >Please select a query type</span
+              >
             </fieldset>
           </div>
 
@@ -145,7 +157,9 @@
                 ></label
               >
             </div>
-            <span class="error-text"
+            <span
+              id="consent-error-text"
+              class="error-text"
               >To submit this form, please consent to being contacted</span
             >
           </div>
